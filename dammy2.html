@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winger IT Solutions Internship</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function toggleWeeks(courseId) {
+            // Get the week container and the current button
+            const weekContainer = document.getElementById(courseId);
+            const currentButton = event.currentTarget;
+        
+            // Check if the current button is already active
+            const isActive = currentButton.classList.contains('active');
+        
+            // Hide all week containers and deactivate all buttons
+            const allWeeks = document.querySelectorAll('.weeks-container');
+            allWeeks.forEach(container => container.classList.remove('active'));
+        
+            const allButtons = document.querySelectorAll('.course-btn');
+            allButtons.forEach(button => button.classList.remove('active'));
+        
+            // If the clicked button was not active, activate it and show the week container
+            if (!isActive) {
+                weekContainer.classList.add('active');
+                currentButton.classList.add('active');
+            }
+        }
+        
+        // Automatically activate the Full Stack week container and its button on page load
+        window.onload = function() {
+            const defaultCourseId = 'fullstack_webdev'; // Replace with the actual ID of the Full Stack week container
+            const defaultButton = document.querySelector('.course-btn[data-course="fullstack_webdev"]'); // Replace with the appropriate button selector
+        
+            // Add 'active' class to the default week container and button
+            const defaultWeekContainer = document.getElementById(defaultCourseId);
+            if (defaultWeekContainer) {
+                defaultWeekContainer.classList.add('active');
+            }
+            if (defaultButton) {
+                defaultButton.classList.add('active');
+            }
+        };
+    </script>
+</head>
+
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="image">
+            <img src="images/logo1.png" alt="Winger logo">
+        </div>
+    
+        <ul class="nav-links">
+            <li><a href="#background-container">Home</a></li>
+            <li><a href="#why-winger">About Us</a></li>
+            <li><a href="#curriculum">Offerings</a></li>
+            <li><a href="#logos-container">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+<!-- Main Section with Centered Form and Content Below -->
+<section class="main-section1">
+    
+    <section id="background-container" class="main-section">
+        
+    <!-- Content Below Form -->
+    <div class="background-container">
+        <div class="uileft">
+        <div class ="ui">
+            <h1>Internship Program from Winger IT Solutions</h1>
+        </div>
+        <div class="content-box">
+             <p>Winger IT Solutions[Affiliated with AICTE-INDIA], we believe in empowering the next generation of tech professionals, we offer a dynamic internship program that gives students the chance to work on innovative projects, develop critical skills, and gain insights into the tech industry.</p>
+             <p>Learn from industry experts with a focus on real-world skills. Choose your preferred domain and kickstart your career with Winger IT Solutions. We offer a comprehensive internship program tailored for students and professionals looking to gain hands-on experience in cutting-edge technologies.</p>   
+       </div>
+    </div>
+
+       <!-- Centered Form -->
+       <div class="center-container">
+        <div class="form-container">
+            <form action="submit_form.php" method="post">
+                <div class="form-group">
+                    <input type="text" name="first_name" placeholder="First Name *" required>
+                    <input type="text" name="last_name" placeholder="Last Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email *" required>
+                    <input type="tel" name="phone" placeholder="Phone Number *" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="graduation_percentage" placeholder="Enter your Graduation Percentage *" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="programming_knowledge" placeholder="Enter your Programming Knowledge *" required>
+                </div>
+                <div class="form-group">
+                    <select name="degree qualification" required>
+                        <option value="" disabled selected>Degree Qualification *</option>
+                        <option value="btech_cs">BE/B-TECH CS</option>
+                        <option value="btech_ec">BE/B-TECH EC</option>
+                        <option value="btech_is">BE/B-TECH IS</option>
+                        <option value="btech_it">BE/B-TECH IT</option>
+                        <option value="btech_ee">BE/B-TECH EE</option>
+                        <option value="be_btech_ae_mae">BE/B-TECH AE/MAE</option>
+                        <option value="be_btech_au_mau">BE/B-TECH AU/MAU</option>
+                        <option value="diploma_polytechnic">Diploma / Polytechnic</option>
+                        <option value="mca_mtech">MCA/MTECH</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <select name="internship_domain" required>
+                        <option value="" disabled selected>Preferred Internship Domain *</option>
+                        <option value="ai_ml_ds">Artificial Intelligence, Machine Learning, and Data Science</option>
+                        <option value="embedded_iot">Embedded Systems and Internet of Things (IoT)</option>
+                        <option value="fullstack_webdev">Full Stack Web Development</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="internship_duration" required>
+                        <option value="" disabled selected>Internship duration *</option>
+                        <option value="1_month">1 month</option>
+                        <option value="3_months">3 months</option>
+                        <option value="6_months">6 months</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="interest_description" placeholder="Briefly describe your interest in the chosen domain. If you have any questions, please include them here." required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    </div>
+    </div>
+
+        <!-- New Section: Why Winger IT Solutions Internship? -->
+        <section id="why-winger" class="why-winger">
+            <div class ="ui3">
+                <h1>Why Winger IT Solutions Internship?</h1>
+            </div>
+            <div class="ui2">
+                <p>Welcome to this exciting Internship program hosted by Winger IT Solutions. We are a 15-year-old company based in India, Bangalore specializing in IT infrastructure and software solutions. Our expertise spans across various technologies, including Artificial Intelligence/Machine Learning/Data Science, Full Stack Web/Software Development, and Embedded Systems and IoT.</p>
+                <p>During this internship program, you will have the opportunity to learn about Futuristic Technologies such as Data Science, Artificial Intelligence, Machine Learning and Full Stack Web Development on the software side. On the hardware side, the program will cover Embedded Systems, IoT, and Robotics.</p>
+                <p>The program is meticulously designed by industry experts to offer you exposure to industry standard practices. Regardless of your engineering branch, you will have the chance to learn these technologies from scratch, helping you develop essential working skills, enhancing your competitiveness in the job market.</p>
+    
+            </div>
+        </section>
+</section>
+
+
+
+   <!-- Curriculum Section -->
+
+   <section id="curriculum" class="curriculum">
+    <h2>Curriculum</h2>
+    <div class="course-buttons">
+        <button class="course-btn" onclick="toggleWeeks('ai_ml_ds')">AI/ML/Data Science</button>
+        <button class="course-btn" onclick="toggleWeeks('fullstack_webdev')">Full-Stack Web Development</button>
+        <button class="course-btn" onclick="toggleWeeks('embedded_iot')">Embedded Systems & IoT</button>
+    </div>
+
+    <!-- AI/ML/Data Science Weeks -->
+    <div id="ai_ml_ds" class="weeks-container hidden">
+        <div class="week">
+            <h3>Week 1: Python Basics Mastery</h3>
+            <ul>
+                <li>Data Types and Variables</li>
+                <li>Type casting</li>
+                <li>Operators</li>
+                <li>Input and Output</li>
+                <li>Conditional Statements</li>
+                <li>Looping Statement</li>
+                <li>Functions</li>
+                <li>File Handling</li>
+                <li>Comprehensions</li>
+                <li>Classes and Object</li>
+                <li>Exception Handling</li>
+                <li>Modules and Packages</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 2: Data Analysis with Python</h3>
+            <ul>
+                <li>Modules for Data Analysis</li>
+                <li>Importing Datasets</li>
+                <li>Data Wrangling</li>
+                <li>Exploratory Data Analysis </li>
+                <li>Data Visualization</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 3: Prerequisites to Start building projects </h3>
+            <ul>
+                <li>Supervised Learning</li>
+                <li>Unsuoervised Learning </li>
+                <li>Reinforcement Learning</li>
+                <li>Deep Learning</li>
+                <li>Understanding OpenCV</li>
+                <li>Natural Language Processing(NLP) Principles</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 4: Real-Time Project Development process</h3>
+            <ul>
+                <li>Requirement Analysis</li>
+                <li>Desing Phase</li>
+                <li>Algorithm Comparison</li>
+                <li>Implementation Phase</li>
+                <Li>Testing and Debugging Phase</Li>
+                <li>Deployment and Maintenance Phase</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Full-Stack Web Development Weeks -->
+    <div id="fullstack_webdev" class="weeks-container hidden">
+        <div class="week">
+            <h3>Week 1: Fundamentals of HTML,CSS, and JavaScript</h3>
+            <ul>
+                <li>Introduction to HTML</li>
+                <li>Designing Frontend with CSS</li>
+                <li>Fundamentals of JavaScript</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 2:Advanced JavaScript ,Frontend Development,Introduction to DBMS and Firebase</h3>
+            <ul>
+                <li>JavaScript Advanced Concepts</li>
+                <li>Frontend Frameworks and Tools></li>
+                <li>Basic Server Setup</li>
+                <li>DBMS Basics</li>
+                <li>Firebase Essentials</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 3: React.js Fundamentals,Express.js,Node.js, MySQL,Full-Stack Development and React Native</h3>
+            <ul>
+                <li>Introduction to React.js</li>
+                <li>React Components and State Management</li>
+                <li>Introduction to Node.js and Express.js</li>
+                <li>User Authentication</li>
+                <li>MySQL Essentials</li>
+                <li>Full-Stack Development</li>
+                <li>Introduction to React Native</li>
+                <li>React Native Components and Styling</li>
+                <li>Navigation and State Management</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 4: Real-Time project Development process</h3>
+            <ul>
+                <li>Requirement Analysis</li>
+                <li>Design Phase</li>
+                <li>Algorithm Comparison</li>
+                <li>Implementation Phase</li>
+                <li>Testing and Debugging Phase</li>
+                <li>Deployment and Maintenance Phase</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Embedded Systems & IoT Weeks -->
+    <div id="embedded_iot" class="weeks-container hidden">
+        <div class="week">
+            <h3>Week 1: Mastering C programming</h3>
+            <ul>
+                <li>Compilation process in C</li>
+                <li>Memory Layout and Scope of Variables</li>
+                <li>Input/Output in C</li>
+                <li>Operators in C</li>
+                <li>Control Statements</li>
+                <li>Functions</li>
+                <li>Arrays</li>
+                <li>Pointers</li>
+                <li>Dynamic Memory Allocation</li>
+                <li>Strings</li>
+                <li>Structures,Unions and Enums</li>
+                <li>The C Preprocessor</li>
+                <li>Bitwise Operations in C</li>
+                <li>Multi-file Compilation</li>
+                <li>Command Line Arguments</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 2: Prerequisites for Embedded Systems Development</h3>
+            <ul>
+                <li>C++ Programming Introduction - Object-Oriented Programming Concepts</li>
+                <li>Microcontroller Basics</li>
+                <li>Arduino Programming Simulation</li>
+                <li>Bare Metal Programming</li>
+                <li>Introduction to Real Time Operating Systems(FreeRTOS)</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 3:practical Embedded Systems Design</h3>
+            <ul>
+                <li>Building a Variable Power Supply Unit</li>
+                <li>Interfacing Various Components</li>
+                <li>Implementating Basic Communication Protocols</li>
+                <li>Interfacing Components with Microprocessors</li>
+                <li>PCB Design and Schematic</li>
+            </ul>
+        </div>
+        <div class="week">
+            <h3>Week 4: Real-time Project Development Process </h3>
+            <ul>
+                <li>Requirement Analysis</li>
+                <li>Design Phase</li>
+                <li>Algorithm Comparison</li>
+                <li>Implementation Phase</li>
+                <li>Testingnand Debugging Phase</li>
+                <li>Deployment and Maintenance phase</li>
+            </ul>
+        </div>
+    </div>
+</section>
+    <!-- Real-Time Projects Section -->
+    <div class="projects-box">
+        <p>
+           NOTE: Starting from Week 5 (Month 2), candidates will be engaged in real-time, industry-level projects. This practical experience is a key component of the curriculum, offering hands-on exposure to industry practices and aimed at enhancing professional skills.
+        </p>
+    </div>
+
+     <!-- New Extra Benefits Section -->
+      <h1 class="add"> ADD-ONS</h1>
+     <div class="containercard">
+    
+        <div class="card">
+            <h2>1. Soft Skills Development</h2>
+            <ul>
+                <li>Communication Skills</li>
+                <li>Teamwork</li>
+                <li>Problem-Solving</li>
+                <li>Presentation Skills</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>2. Corporate Training</h2>
+            <ul>
+                <li>Industry-Specific Knowledge</li>
+                <li>Professional Etiquette</li>
+                <li>Role-Specific Training</li>
+                <li>Compliance and Ethics</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>3. Interview Preparation</h2>
+            <ul>
+                <li>Mock Interviews</li>
+                <li>Behavioral Questions</li>
+                <li>Technical Questions</li>
+                <li>Interview Etiquette</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>4. Resume Building</h2>
+            <ul>
+                <li>Tailored Resumes</li>
+                <li>Formatting and Presentation</li>
+                <li>Keyword Optimization</li>
+                <li>Achievement-Focused Content</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>5. Career Guidance</h2>
+            <ul>
+                <li>Career Path Exploration</li>
+                <li>Goal Setting</li>
+                <li>Mentorship</li>
+                <li>Job Market Insights</li>
+            </ul>
+        </div>
+        <div class="card center-card">
+            <h2>6. Internship Completion Certificates</h2>
+            <ul>
+                <li>Certification of Achievement</li>
+                <li>Skill Validation</li>
+                <li>Employer Recognition</li>
+                <li>Portfolio Enhancement</li>
+            </ul>
+        </div>
+    </div>
+          
+    <!-- Logos Section -->
+    <div id="logos-container" class="logos-container">
+       <a><img src="images/python.png" alt="Python Logo"></a>
+       <a><img src="images/Java.png" alt="Java Logo"></a>
+       <a><img src="images/C.png" alt="C Programming Logo"></a>
+       <a><img src="images/C++.png" alt="C++ Logo"></a>
+       <a><img src="images/HTML.png" alt="HTML Logo"></a>
+       <a><img src="images/CSS.png" alt="CSS Logo"></a>
+       <a><img src="images/JavaScript.png" alt="JavaScript Logo"></a>
+       <a><img src="images/reactnative.png" alt="React Native Logo"></a>
+       <a><img src="images/SQL.png" alt="SQL Logo"></a>
+       <a><img src="images/angular.png" alt="React.js Logo"></a>
+       <a><img src="images/firebase.png" alt="Firebase Logo"></a>
+       <a><img src="images/nodejs.png" alt="Node.js Logo"></a>
+       <a><img src="images/expressjs.png" alt="Express.js Logo"></a>
+       <a><img src="images/bootstrap.png" alt="Bootstrap Logo"></a>
+       <a><img src="images/github.png" alt="GitHub Logo"></a>
+    </div>
+
+    <!-- Footer Section -->
+<footer id="contact" class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <p>&copy; 2024 Winger IT Solutions. All rights reserved.</p>
+            <p>Address: #669 D, 2nd Block, HBR layout, Bangalore,karnataka</p>
+            <p>Website: www.wingerit.in</p>
+            <p>Phone: +91 90352 61715</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
+
+
+
